@@ -232,13 +232,31 @@ The chromatic convergence theorem establishes something profound for collective 
 
 ### The Telescope Conjecture (Mahowald 1981; Disproved 2023)
 
-For a **type-$n$ finite complex** $V(n)$ — a finite spectrum with $K(m)_*(V(n)) = 0$ for $m < n$ and $K(n)_*(V(n)) \neq 0$ — there exists a $v_n$-self map $v\colon \Sigma^{2(p^n-1)} V(n) \to V(n)$. The **telescope conjecture** of Mahowald (1981) predicted:
+**Setup.** A **type-$n$ finite complex** is a finite spectrum $V(n)$ satisfying:
 
-$$v_n^{-1} \pi_*(V(n)) \;\cong\; \pi_*\!\left(L_{K(n)} V(n)\right)$$
+$$K(m)_{\ast}(V(n)) = 0 \quad \text{for all } m < n, \qquad K(n)_{\ast}(V(n)) \neq 0$$
 
-That is: the colimit $v_n^{-1} \pi_*(V(n))$ formed by inverting the $v_n$-self map (the "telescope") should agree with the $K(n)$-local homotopy groups. The telescope was expected to provide a computationally simpler equivalent for chromatic localization.
+By the Nilpotence and Periodicity Theorems (Devinatz–Hopkins–Smith 1988; Hopkins–Smith 1998), any such spectrum admits a **$v_n$-self map**: a stable map
 
-**Burklund–Hahn–Levy–Schlank (2023)** proved: **the telescope conjecture is false at all heights $n \geq 2$ and all primes $p$.** The telescope $v_n^{-1}\pi_*(V(n))$ is strictly larger than $\pi_*(L_{K(n)} V(n))$; extra classes appear in the telescope that vanish in the $K(n)$-local category.
+$$v \colon \Sigma^{2(p^n - 1)k}\, V(n) \longrightarrow V(n)$$
+
+for some positive integer $k$, which is an equivalence on $K(n)$-homology and zero on $K(m)$-homology for $m \neq n$. Inverting $v$ produces the **telescope**
+
+$$v^{-1} V(n) = \varinjlim\!\left(V(n) \xrightarrow{v} \Sigma^{-2(p^n-1)k} V(n) \xrightarrow{v} \Sigma^{-4(p^n-1)k} V(n) \xrightarrow{v} \cdots\right)$$
+
+the sequential colimit formed by iterating the self-map. The homotopy groups of this telescope are denoted $v_n^{-1}\pi_{\ast}(V(n))$.
+
+**The conjecture.** Mahowald (1981) predicted that the telescope should model $K(n)$-localization on homotopy groups:
+
+$$v_n^{-1}\pi_{\ast}(V(n)) \;\cong\; \pi_{\ast}\!\left(L_{K(n)} V(n)\right)$$
+
+Both sides are $v_n$-periodic by construction; the conjecture claimed they are isomorphic. Since the telescope is a filtered colimit — computable in principle — this would have given a concrete handle on the otherwise abstract $K(n)$-local category.
+
+**The disproof.** Burklund–Hahn–Levy–Schlank (2023) proved: **the telescope conjecture is false at all heights $n \geq 2$ and all primes $p$.** The inclusion
+
+$$\pi_{\ast}\!\left(L_{K(n)} V(n)\right) \;\subsetneq\; v_n^{-1}\pi_{\ast}(V(n))$$
+
+is strict — the telescope contains extra homotopy classes that are invisible to $K(n)$-localization. These phantom classes exist at every height $\geq 2$ and at every prime, establishing a genuine gap between the two $v_n$-periodic categories.
 
 ### The ERI Identification: FERN Depth Is Strictly Richer than $K(n)$
 
